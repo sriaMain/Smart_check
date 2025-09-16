@@ -3,7 +3,7 @@ from django.urls import path
 
 
 from .views import (DashboardAPIView, VisitorListAPIView, VisitorDetailAPIView, VisitorApprovalAPIView, 
-                    VisitorEntryExitAPIView,CategoryListAPIView, VisitorRescheduleAPIView,
+                    VisitorEntryExitView,CategoryListAPIView, VisitorRescheduleAPIView,
                     VehicleListAPIView, VisitorApprovalDecisionView, VisitorFilterAPIView, CompanyVisitorsAPIView)
 
 urlpatterns = [
@@ -18,7 +18,7 @@ urlpatterns = [
     path('visitors/<uuid:pk>/approval/', VisitorApprovalAPIView.as_view(), name='visitor-approval'),
     path('visitors/<uuid:pk>/reject/', VisitorApprovalAPIView.as_view(), name='visitor-reject'),
     path('visitor/decision/<uuid:pk>/', VisitorApprovalDecisionView.as_view(), name='visitor-decision'),
-    path('visitors/<uuid:pk>/entry-exit/', VisitorEntryExitAPIView.as_view(), name='visitor-entry-exit'),
+    path('visitors/<str:pass_id>/entry-exit/', VisitorEntryExitView.as_view(), name='visitor-entry-exit'),
     path('visitors/<uuid:pk>/reschedule/', VisitorRescheduleAPIView.as_view(), name='visitor-reschedule'),
     path('company/<int:company_id>/visitors/', CompanyVisitorsAPIView.as_view(), name='company-visitors'),
 

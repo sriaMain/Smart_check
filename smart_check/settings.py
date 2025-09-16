@@ -12,25 +12,22 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$h%^8=mwvw36h--#n*v@eh+dws_relb&_8d4ddt(4h$wnso&^f'
-
+# SECRET_KEY = 'django-insecure-$h%^8=mwvw36h--#n*v@eh+dws_relb&_8d4ddt(4h$wnso&^f'
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-# CORS_ALLOWED_ORIGINS = ['*']
-# CORS_ALLOWED_ORIGINS = [
-#     "https://s39c9z90-3000.inc1.devtunnels.ms/",  # ✅ Correct (no trailing slash)
-# ]
+
 CORS_ALLOW_ALL_ORIGINS = True  # (Allows all origins) OR Add on
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:55430",  # ✅ Correct (no trailing slash)
@@ -40,7 +37,7 @@ CORS_ALLOWED_ORIGINS = [
     # "https://g4kkqg1m-3000.inc1.devtunnels.ms",
      
     #  "*" ,# Allow requests from React frontend Add on
-    "https://s39c9z90-3000.inc1.devtunnels.ms",
+    # "https://s39c9z90-3000.inc1.devtunnels.ms",
 ]
 
 CORS_ALLOW_CREDENTIALS=True
