@@ -32,6 +32,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # (Allows all origins) OR Add on
 CORS_ALLOWED_ORIGINS = [
     # "http://localhost:55430",  # ✅ Correct (no trailing slash)
     "http://localhost:3000", 
+    "https://gate-check-lwnp.onrender.com",
     # "http://localhost:8000",
     # "https://s39c9z90-3000.inc1.devtunnels.ms",
     # "https://g4kkqg1m-3000.inc1.devtunnels.ms",
